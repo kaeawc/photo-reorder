@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import timber.log.Timber
 
-class ReorderAdapter(val context: Context, val data: List<Int>) : BaseAdapter() {
+class GridViewAdapter(val context: Context, val data: List<Int>) : BaseAdapter() {
 
     val inflater = LayoutInflater.from(context)
 
