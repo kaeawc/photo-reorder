@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "$build_tools_version"
+
+    defaultConfig {
+        applicationId "co.hinge.reorder"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests.all {
+            // All the usual Gradle options.
+            jvmArgs '-noverify'
+            testLogging {
+                events "passed", "skipped", "failed", "standardOut", "standardError"
+                outputs.upToDateWhen {false}
+                showStandardStreams = true
+            }
+        }
+    }
+
+    lintOptions {
+        abortOnError true
+        checkReleaseBuilds false
+        absolutePaths false
+        checkAllWarnings true
+    }
+}
+
+dependencies {
+
+    // Kotlin
+    compile deps.kotlin
+
+    // Google Support Libraries
+    compile deps.appCompat
+    compile deps.design
+    compile deps.customTabs
+    compile deps.constraintLayout
+
+    // Logging
+    compile deps.timber
+
+    // Tests
+    testCompile deps.junit
+    testCompile deps.mockitoForKotlin
+    testCompile deps.kotlin
+}
+
+repositories {
+    mavenCentral()
+}
