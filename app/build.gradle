@@ -65,7 +65,6 @@ dependencies {
     testCompile deps.junit
     testCompile deps.mockitoForKotlin
     testCompile deps.kotlin
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 
 repositories {
