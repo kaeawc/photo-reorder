@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="commonListItemStyle">
+        <item name="android:elevation">4dp</item>
+        <item name="android:outlineProvider">bounds</item>
+    </style>
+
+</resources>
