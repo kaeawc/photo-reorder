@@ -39,6 +39,8 @@ ext.deps = [
         constraintLayout: "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
         customTabs: "com.android.support:customtabs:$supportLibraryVersion",
 
+        advancedRecyclerView: "com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.4@aar",
+
         // Logging
         timber: "com.jakewharton.timber:timber:$timberVersion",
 
