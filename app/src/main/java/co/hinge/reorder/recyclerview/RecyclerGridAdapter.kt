@@ -66,6 +66,7 @@ class RecyclerGridAdapter(context: Context, val data: MutableList<Int>) :
         if (position < 0 || position >= data.size) return
         val item = data[position]
         val context = weakContext?.get() ?: return
-        holder.bindData(context, item)
+        val label = (position + 1).toString()
+        holder.bindData(context, item, label)
     }
 }
