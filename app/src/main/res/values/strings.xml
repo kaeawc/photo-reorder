@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Reorder</string>
+    <string name="recycler_view">Recycler View</string>
+    <string name="grid_view">Grid View</string>
 </resources>

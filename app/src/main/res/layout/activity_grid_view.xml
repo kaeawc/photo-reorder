@@ -5,7 +5,7 @@
     android:id="@+id/gridView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.hinge.reorder.GridViewActivity"
+    tools:context="co.hinge.reorder.gridview.GridViewActivity"
     android:numColumns="2"
     android:stretchMode="columnWidth"
     tools:listitem="@layout/photo"
