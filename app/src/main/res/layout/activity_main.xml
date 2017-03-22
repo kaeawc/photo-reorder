@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/gridView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="co.hinge.reorder.GridViewActivity"
-    android:numColumns="2"
-    android:stretchMode="columnWidth"
-    tools:listitem="@layout/photo"
-    android:padding="4dp"
-    />
+    tools:context="co.hinge.reorder.MainActivity"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/gridViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Grid View"/>
+
+    <Button
+        android:id="@+id/recyclerViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Recycler View"/>
+
+</LinearLayout>
