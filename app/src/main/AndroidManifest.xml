@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".GridViewActivity" />
+        <activity android:name=".gridview.GridViewActivity" />
 
         <activity android:name=".recyclerview.RecyclerViewActivity" />
 
