@@ -5,7 +5,6 @@
     android:id="@+id/photoContainer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="4dp"
     >
 
     <ImageView
@@ -17,7 +16,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:src="@android:color/holo_red_dark"
+        android:layout_margin="4dp"
         android:contentDescription="@null"
+        android:elevation="4dp"
+        android:outlineProvider="bounds"
         />
 
 </android.support.constraint.ConstraintLayout>
