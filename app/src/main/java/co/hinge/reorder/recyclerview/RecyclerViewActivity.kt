@@ -28,7 +28,7 @@ class RecyclerViewActivity : AppCompatActivity() {
         display.getSize(point)
         val width = point.x
         val height = point.y
-        val columnSpan = when {
+        val columnCount = when {
             width > height -> 3
             else -> 2
         }
@@ -42,7 +42,7 @@ class RecyclerViewActivity : AppCompatActivity() {
                 android.R.color.holo_blue_dark
         )
 
-        val photoLayoutManager = GridLayoutManager(baseContext, columnSpan, GridLayoutManager.VERTICAL, false)
+        val photoLayoutManager = GridLayoutManager(baseContext, columnCount, GridLayoutManager.VERTICAL, false)
 
         // drag & drop manager
         dragDropManager = RecyclerViewDragDropManager()
