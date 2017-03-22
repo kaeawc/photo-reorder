@@ -8,7 +8,6 @@ import co.hinge.reorder.R
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemConstants as Draggable
 import com.h6ah4i.android.widget.advrecyclerview.draggable.ItemDraggableRange
-import timber.log.Timber
 import java.lang.ref.WeakReference
 
 class RecyclerGridAdapter(context: Context, val data: MutableList<Int>) :
@@ -31,22 +30,20 @@ class RecyclerGridAdapter(context: Context, val data: MutableList<Int>) :
 
     override fun onMoveItem(fromPosition: Int, toPosition: Int) {
 
-        if (fromPosition == toPosition) {
-            return Timber.e("Cannot move from $fromPosition to itself")
+        if (move(fromPosition, toPosition)) {
+            notifyItemMoved(fromPosition, toPosition)
         }
-
-        swap(fromPosition, toPosition)
-        notifyItemMoved(fromPosition, toPosition)
     }
 
     override fun onGetItemDraggableRange(holder: PhotoViewHolder, position: Int): ItemDraggableRange? {
         return null
     }
 
-    fun swap(firstPosition: Int, secondPosition: Int) {
-        val swap = data[firstPosition]
-        data[firstPosition] = data[secondPosition]
-        data[secondPosition] = swap
+    fun move(source: Int, destination: Int): Boolean {
+        if (source == destination) return false
+        val element = data.removeAt(source)
+        data.add(destination, element)
+        return true
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): PhotoViewHolder {
